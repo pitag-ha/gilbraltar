@@ -53,18 +53,18 @@ void mem_init(void) {
   mem_size = (unsigned long long)MEMORY_SIZE;
   heap_start = ((uint64_t)&__end + PAGE_SIZE - 1) & PAGE_MASK;
 
-  log(INFO, "RPi4: Memory map: %llu MB addressable:\n",
-      (unsigned long long)mem_size >> 20);
-  log(INFO, "RPi4:   reserved @ (0x0 - 0x%llx)\n",
-      (unsigned long long)__text_start - 1);
-  log(INFO, "RPi4:       text @ (0x%llx - 0x%llx)\n",
-      (unsigned long long)__text_start, (unsigned long long)__text_end - 1);
-  log(INFO, "RPi4:     rodata @ (0x%llx - 0x%llx)\n",
-      (unsigned long long)__text_end, (unsigned long long)__rodata_end - 1);
-  log(INFO, "RPi4:       data @ (0x%llx - 0x%llx)\n",
-      (unsigned long long)__rodata_end, (unsigned long long)__end - 1);
-  log(INFO, "RPi4:       heap >= 0x%llx < stack < 0x%llx\n",
-      (unsigned long long)heap_start, (unsigned long long)mem_size);
+//   log(INFO, "RPi4: Memory map: %llu MB addressable:\n",
+//       (unsigned long long)mem_size >> 20);
+//   log(INFO, "RPi4:   reserved @ (0x0 - 0x%llx)\n",
+//       (unsigned long long)__text_start - 1);
+//   log(INFO, "RPi4:       text @ (0x%llx - 0x%llx)\n",
+//       (unsigned long long)__text_start, (unsigned long long)__text_end - 1);
+//   log(INFO, "RPi4:     rodata @ (0x%llx - 0x%llx)\n",
+//       (unsigned long long)__text_end, (unsigned long long)__rodata_end - 1);
+//   log(INFO, "RPi4:       data @ (0x%llx - 0x%llx)\n",
+//       (unsigned long long)__rodata_end, (unsigned long long)__end - 1);
+//   log(INFO, "RPi4:       heap >= 0x%llx < stack < 0x%llx\n",
+//       (unsigned long long)heap_start, (unsigned long long)mem_size);
 }
 
 /*

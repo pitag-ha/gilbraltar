@@ -26,29 +26,29 @@ void _start_c() {
   crt_init_ssp();
 
   uart_init();
-  uart_puts_actual(output00, strlen(output00));
+  // uart_puts_actual(output00, strlen(output00));
 
   tscclock_init(-1);
-  uart_puts_actual(output01, strlen(output01));
+  // uart_puts_actual(output01, strlen(output01));
 
-  log(INFO, " _____ _ _ _           _ _           \n");
-  log(INFO, "|   __|_| | |_ ___ ___| | |_ ___ ___ \n");
-  log(INFO, "|  |  | | | . |  _| .'| |  _| .'|  _|\n");
-  log(INFO, "|_____|_|_|___|_| |__,|_|_| |__,|_|  \n");
+  // log(INFO, " _____ _ _ _           _ _           \n");
+  // log(INFO, "|   __|_| | |_ ___ ___| | |_ ___ ___ \n");
+  // log(INFO, "|  |  | | | . |  _| .'| |  _| .'|  _|\n");
+  // log(INFO, "|_____|_|_|___|_| |__,|_|_| |__,|_|  \n");
   uart_drain_output_queue();
 
   irq_init_vectors();
-  uart_puts_actual(output02, strlen(output02));
+  // uart_puts_actual(output02, strlen(output02));
 
   mmu_on();
-  uart_puts_actual(output03, strlen(output03));
+  // uart_puts_actual(output03, strlen(output03));
 
   mem_init();
-  uart_puts_actual(output04, strlen(output04));
+  // uart_puts_actual(output04, strlen(output04));
   mem_lock_heap(&heap_start, &heap_size);
 
   _nolibc_init(heap_start, heap_size);
-  uart_puts_actual(output05, strlen(output05));
+  // uart_puts_actual(output05, strlen(output05));
   uart_drain_output_queue();
 
   caml_startup(args);
