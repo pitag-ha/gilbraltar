@@ -129,6 +129,12 @@ void uart_init() {
   mmio_write(AUX_MU_CNTL_REG, 3); // enable RX/TX
 }
 
+void uart_set_baudrate(unsigned int rate)
+{
+    mmio_write(AUX_MU_BAUD_REG, AUX_MU_BAUD(rate));
+    return;
+}
+
 unsigned int uart_is_output_queue_empty() {
   return uart_output_queue_read == uart_output_queue_write;
 }
